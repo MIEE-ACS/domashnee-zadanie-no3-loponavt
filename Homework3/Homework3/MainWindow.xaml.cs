@@ -24,41 +24,14 @@ namespace Homework3
         {
             InitializeComponent();
         }
-
-        private void btn_count_Click(object sender, RoutedEventArgs e)
+        private void tb_text_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string text = tb_text.Text;
-            int number = 1;
-            bool flag = true;
+            string text = tb_text.Text + ' ';
+            int number = 0;
             for (int i = 0; i < text.Length; i++)
             {
-                if (text[i] != ' ')
-                {
-                    flag = false;
-                }
-            }
-            if (text.Length == 0 || flag)
-            {
-                number = 0;
-            }
-            if (!flag)
-            {
-                for (int i = 0; i < text.Length; i++)
-                {
-                    if (i > 0)
-                    {
-                        if (((text[i] != ' ') && (text[i - 1] == ' ')) ||
-                            ((text[i] != ' ') && (text[i - 1] == '.')) ||
-                            ((text[i] != ' ') && (text[i - 1] == ',')) ||
-                            ((text[i] != ' ') && (text[i - 1] == '!')) ||
-                            ((text[i] != ' ') && (text[i - 1] == '?'))) number++;
-                    }
-                    else
-                    {
-                        if (text[i] == ' ') number--;
-                    }
-
-                }
+                if ((Char.IsLetterOrDigit(text[i]) && Char.IsWhiteSpace(text[i + 1]))
+                    || (Char.IsLetterOrDigit(text[i]) && Char.IsPunctuation(text[i + 1]))) number++;
             }
             tb_number.Text = number.ToString();
         }

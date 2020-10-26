@@ -8,10 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Label Content="Введите текст:" Margin="10,10,0,0" VerticalAlignment="Top" Height="60" FontSize="24" HorizontalAlignment="Left" Width="167"/>
-        <TextBox x:Name="tb_text" Margin="10,70,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Height="106"/>
-        <Label Content="Количество слов в веденном тексте:" Margin="10,247,0,0" VerticalAlignment="Top" FontSize="22" HorizontalAlignment="Left" Width="377"/>
+        <TextBox x:Name="tb_text" Margin="10,70,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Height="147" TextChanged="tb_text_TextChanged"/>
+        <Label Content="Количество слов в ведённом тексте:" Margin="10,247,0,0" VerticalAlignment="Top" FontSize="22" HorizontalAlignment="Left" Width="377"/>
         <TextBlock x:Name="tb_number" HorizontalAlignment="Left" Margin="410,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Width="36" AutomationProperties.HelpText="vfb"/>
-        <Button x:Name="btn_count" Content="Посчитать" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="22" Click="btn_count_Click" HorizontalAlignment="Left" Width="108"/>
 
     </Grid>
 </Window>
